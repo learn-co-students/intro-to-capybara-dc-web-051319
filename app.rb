@@ -1,4 +1,13 @@
+require 'pry'
+
 class Application < Sinatra::Base
-  # Write your code here!
+   get '/' do
+    erb :index
+  end
+    post '/greet' do
+      @name = params["user_name"]
+      binding.pry
+    erb :greet
+  end
 
 end
